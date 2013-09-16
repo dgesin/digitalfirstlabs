@@ -1,0 +1,212 @@
+//
+// Tables
+// --------------------------------------------------
+
+
+// Base tables
+// -----------------
+
+table {
+  max-width: 100%;
+  background-color: @tableBg;
+  border-collapse: collapse; // nm v2.1.2
+  border-spacing: 0; // nm v2.1.2
+}
+th {
+  text-align: left;
+}
+
+// Baseline styles
+// ---------------
+
+.table, 
+table.responsive {
+  width: 100%;
+  margin-bottom: @lineHeightPx;
+  // Cells
+  thead,
+  tbody,
+  tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @tableCellPadding;
+        line-height: @lineHeight;
+        vertical-align: top;
+        border-top: 1px solid @tableBorderColor;
+      }
+    }
+  }
+  // Bottom align for column headings
+  thead > tr > th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  caption + thead,
+  colgroup + thead,
+  thead:first-child {
+    tr:first-child {
+      th, td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+    border-top: 2px solid @tableBorderColor;
+  }
+
+  // Nesting
+  .table {
+    background-color: @bodyBg;
+  }
+}
+
+
+
+// Condensed table w/ half padding
+// -------------------------------
+
+.table.condensed {
+  thead,
+  tbody,
+  tfoot {
+    > tr {
+      > th,
+      > td {
+        .font-size(@fontSize - 1);
+        padding: @paddingSmallVertical @paddingSmallHorizontal;
+        line-height: @lineHeight/1.5;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+// ----------------
+.table.bordered {
+  border: 1px solid @tableBorderColor;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid @tableBorderColor;
+      }
+    }
+  }
+}
+
+// Zebra-striping
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table.striped {
+  > tbody {
+    > tr:nth-child(odd) {
+      > td,
+      > th {
+        background-color: @tableBgAccent;
+      }
+    }
+  }
+}
+
+
+
+// Hover effect
+// ------------
+
+// Placed here since it has to come after the potential zebra striping
+.table.hover {
+  > tbody {
+    > tr:hover {
+      > td,
+      > th {
+        background-color: @tableBgHover;
+      }
+    }
+  }
+}
+
+
+
+// Table cell sizing
+// -----------------
+
+// Reset default table behavior
+table col[class^="col-"] {
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class^="col-"] {
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+// Table backgrounds
+// -----------------
+// Exact selectors below required to override `.table.striped` and prevent
+// inheritance to nested tables.
+
+.table > thead > tr,
+.table > tbody > tr,
+.table > tfoot > tr {
+  > td.active,
+  > th.active,
+  &.active > td,
+  &.active > th  {
+    background-color: @tableBgHover;
+  }
+  > td.success,
+  > th.success,
+  &.success > td,
+  &.success > th {
+    background-color: @successBg;
+    border-color: @successBorder;
+  }
+  > td.danger,
+  > th.danger,
+  &.danger > td,
+  &.danger > th {
+    background-color: @dangerBg;
+    border-color: @dangerBorder;
+  }
+  > td.warning,
+  > th.warning,
+  &.warning > td,
+  &.warning > th {
+    background-color: @warningBg;
+    border-color: @warningBorder;
+  }
+}
+
+// Hover states for `.table-hover`
+// Note: this is not available for cells or rows within `thead` or `tfoot`.
+.table-hover > tbody > tr {
+  > td.success:hover,
+  > th.success:hover,
+  &.success:hover > td {
+    background-color: darken(@successBg, 5%);
+    border-color: darken(@successBorder, 5%);
+  }
+  > td.danger:hover,
+  > th.danger:hover,
+  &.danger:hover > td {
+    background-color: darken(@dangerBg, 5%);
+    border-color: darken(@dangerBorder, 5%);
+  }
+  > td.warning:hover,
+  > th.warning:hover,
+  &.warning:hover > td {
+    background-color: darken(@warningBg, 5%);
+    border-color: darken(@warningBorder, 5%);
+  }
+}

@@ -1,0 +1,72 @@
+//
+// Pager pagination
+// --------------------------------------------------
+
+.pager {
+  padding-left: 0;
+  margin: @lineHeightPx 0;
+  list-style: none;
+  text-align: center;
+  .clearfix();
+  li {
+    display: inline;
+    > a,
+    > span {
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: @paginationBg;
+      border: 1px solid @paginationBorder;
+      border-radius: @pagerBorderRadius;
+    }
+
+    > a:hover,
+    > a:focus {
+      text-decoration: none;
+      background-color: @paginationActiveBg;
+    }
+  }
+
+  .next {
+    > a,
+    > span {
+      float: right;
+    }
+  }
+
+  .previous {
+    > a,
+    > span {
+      float: left;
+    }
+  }
+
+  .disabled {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span {
+      color: @pagerDisabledColor;
+      background-color: @paginationBg;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.pager.plain {
+  li {
+    display: inline;
+    > a,
+    > span {
+      display: inline-block;
+      padding: 5px 0;
+      border: 0;
+      border-radius: 0;
+    }
+    > a:hover,
+    > a:focus {
+      text-decoration: underline;
+      background-color: transparent;
+      color: @linkColorHover;
+    }
+  }
+}

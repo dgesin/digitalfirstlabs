@@ -1,0 +1,377 @@
+//
+// Navbars
+// --------------------------------------------------
+
+// Wrapper and base class
+.navbar {
+  position: relative;
+  min-height: @navbarHeight; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  margin-bottom: 20px;
+  padding-left: @navbarPaddingHorizontal;
+  padding-right: @navbarPaddingHorizontal;
+  background-color: @navbarBg;
+  border-radius: @borderRadius;
+
+  // Prevent floats from breaking the navbar
+  .clearfix();
+}
+
+// Navbar nav links
+// -------------------------
+
+.navbar-nav {
+  // Space out from .navbar .brand and .btn-navbar when stacked in mobile views
+  // and outdent nav links so text lines up with logo.
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  > li > a {
+    padding-top: ((@navbarHeight - @lineHeightPx) / 2);
+    padding-bottom: ((@navbarHeight - @lineHeightPx) / 2);
+    color: @navbarLinkColor;
+    line-height: 20px;
+    border-radius: @borderRadius;
+    &:hover,
+    &:focus {
+      color: @navbarLinkHoverColor;
+      background-color: @navbarLinkHoverBg;
+    }
+  }
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbarLinkActiveColor;
+      background-color: @navbarLinkActiveBg;
+    }
+  }
+  > .disabled > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbarLinkDisabledColor;
+      background-color: @navbarLinkDisabledBg;
+    }
+  }
+
+  // Right aligned contents
+  // Make them full width first so that they align properly on mobile
+  &.pull-right {
+    width: 100%;
+  }
+}
+
+
+
+//
+// Navbar alignment options
+// --------------------------------------------------
+
+// Static navbar
+.navbar-static-top {
+  border-radius: 0;
+}
+
+// Fix the top/bottom navbars when screen real estate supports it
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: @zindexFixedNavbar;
+  border-radius: 0;
+}
+.navbar-fixed-top    { 
+  top: 0; 
+}
+.navbar-fixed-bottom { 
+  bottom: 0;
+  margin-bottom: 0; // override .navbar defaults
+}
+
+
+
+//
+// Navbar optional components
+// --------------------------------------------------
+
+// Brand/project name
+.navbar-brand {
+  display: block;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: @navbarPaddingVertical @navbarPaddingHorizontal;
+  font-size: @fontSizeLarge;
+  font-weight: 500;
+  line-height: @lineHeightPx;
+  color: @navbarBrandColor;
+  text-align: center;
+  &:hover,
+  &:focus {
+    color: @navbarBrandHoverColor;
+    text-decoration: none;
+    background-color: @navbarBrandHoverBg;
+  }
+}
+
+// Collapsible navbar toggle
+.navbar-toggle {
+  position: absolute;
+  top: floor((@navbarHeight - 32) / 2);
+  right: 10px;
+  height: 32px;
+  padding: 8px 12px;
+  background-color: transparent;
+  border: 1px solid @navbarToggleBorderColor;
+  border-radius: @borderRadius;
+
+  &:hover,
+  &:focus {
+    background-color: @navbarToggleHoverBg;
+  }
+
+  // Bars
+  .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: @navbarToggleIconBarBg;
+    border-radius: 1px;
+  }
+  .icon-bar + .icon-bar {
+    margin-top: 4px;
+  }
+}
+
+// Navbar form
+.navbar-form {
+  .form-inline();
+  .navbar-vertical-align(@inputHeight); // Vertically center in navbar
+}
+
+// Dropdown menus
+
+// Menu position and menu carets
+.navbar-nav > li > .dropdown-menu {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+// Menu position and menu caret support for dropups via extra dropup class
+.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+// Dropdown menu items and carets
+.navbar-nav {
+  // Caret should match text color on hover
+  >.dropdown > a:hover .caret,
+  >.dropdown > a:focus .caret {
+    border-top-color: @navbarLinkHoverColor;
+    border-bottom-color: @navbarLinkHoverColor;
+  }
+  // Remove background color from open dropdown
+  > .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: @navbarLinkActiveBg;
+      color: @navbarLinkActiveColor;
+      .caret {
+        border-top-color: @navbarLinkActiveColor;
+        border-bottom-color: @navbarLinkActiveColor;
+      }
+    }
+  }
+  > .dropdown > a .caret {
+    border-top-color: @navbarLinkColor;
+    border-bottom-color: @navbarLinkColor;
+  }
+}
+
+// Right aligned menus need alt position
+.navbar-nav.pull-right > li > .dropdown-menu,
+.navbar-nav > li > .dropdown-menu.pull-right {
+  left: auto;
+  right: 0;
+}
+
+
+
+// Inverse navbar
+// --------------------------------------------------
+
+.navbar-inverse {
+  background-color: @navbarInverseBg;
+
+  .navbar-brand {
+    color: @navbarInverseBrandColor;
+    &:hover,
+    &:focus {
+      color: @navbarInverseBrandHoverColor;
+      background-color: @navbarInverseBrandHoverBg;
+    }
+  }
+
+  .navbar-text {
+    color: @navbarInverseText;
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: @navbarInverseLinkColor;
+
+      &:hover,
+      &:focus {
+        color: @navbarInverseBrandHoverColor;
+        background-color: @navbarInverseLinkHoverBg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbarInverseLinkActiveColor;
+        background-color: @navbarInverseLinkActiveBg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: @navbarInverseLinkDisabledColor;
+        background-color: @navbarInverseLinkDisabledBg;
+      }
+    }
+  }
+
+  // Darken the responsive nav toggle
+  .navbar-toggle {
+    border-color: @navbarInverseToggleBorderColor;
+    &:hover,
+    &:focus {
+      background-color: @navbarInverseToggleHoverBg;
+    }
+    .icon-bar {
+      background-color: @navbarInverseToggleIconBarBg;
+    }
+  }
+
+  // Dropdowns
+  .navbar-nav {
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: @navbarInverseLinkActiveBg;
+        color: @navbarInverseLinkActiveColor;
+      }
+    }
+    > .dropdown > a:hover .caret {
+      border-top-color: @navbarInverseLinkHoverColor;
+      border-bottom-color: @navbarInverseLinkHoverColor;
+    }
+    > .dropdown > a .caret {
+      border-top-color: @navbarInverseLinkColor;
+      border-bottom-color: @navbarInverseLinkColor;
+    }
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        .caret {
+          border-top-color: @navbarInverseLinkActiveColor;
+          border-bottom-color: @navbarInverseLinkActiveColor;
+        }
+      }
+    }
+  }
+}
+
+
+
+// Responsive navbar
+// --------------------------------------------------
+
+@media screen and (min-width: @screenTablet) {
+  .navbar-brand {
+    float: left;
+    margin-left: -(@navbarPadding);
+    margin-right: 5px;
+  }
+  .navbar-nav {
+    float: left;
+    // undo margin to make nav extend full height of navbar
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > li {
+      float: left;
+      > a {
+        border-radius: 0;
+      }
+    }
+
+    &.pull-right {
+      float: right;
+      width: auto;
+    }
+  }
+
+  // Required to make the collapsing navbar work on regular desktops
+  .navbar-toggle {
+    position: relative;
+    top: auto;
+    left: auto;
+    display: none;
+  }
+  .nav-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+
+
+// Buttons in navbars
+//
+// Vertically center a button within a navbar (when *not* in a form).
+
+.navbar-btn {
+  margin-top: ((@navbarHeight - @inputHeight) / 2);
+}
+
+
+
+// Text in navbars
+//
+// Add a class to make any element properly align itself vertically within the navbars.
+
+.navbar-text {
+  .navbar-vertical-align(@lineHeightPx);
+}
+
+
+
+// Links in navbars
+//
+// Add a class to ensure links outside the navbar nav are colored correctly.
+
+// Default navbar variables
+.navbar-link {
+  color: @navbarLinkColor;
+  &:hover {
+    color: @navbarLinkHoverColor;
+  }
+}
+
+// Use the inverse navbar variables
+.navbar-inverse .navbar-link {
+  color: @navbarInverseLinkColor;
+  &:hover {
+    color: @navbarInverseLinkHoverColor;
+  }
+}

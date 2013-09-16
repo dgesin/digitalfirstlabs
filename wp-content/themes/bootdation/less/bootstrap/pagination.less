@@ -1,0 +1,133 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: @lineHeightPx 0;
+  border-radius: @borderRadius;
+  > li {
+	display: inline; // Remove list-style and block-level defaults
+    > a,
+    > span {
+      float: left; // Collapse white-space
+      padding: 4px 12px;
+      line-height: @lineHeight;
+      text-decoration: none;
+      background-color: @paginationBg;
+      border: 1px solid @paginationBorder;
+      border-left-width: 0;
+    }
+    &:first-child {
+      > a,
+      > span {
+        border-left-width: 1px;
+        .border-left-radius(@borderRadius);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@borderRadius);
+      }
+    }
+  }
+  > li > a:hover,
+  > li > a:focus,
+  > .active > a,
+  > .active > span {
+	color: @paginationActiveColor;
+    background-color: @paginationActiveBg;
+  }
+  > .active > a,
+  > .active > span {
+    color: @paginationActiveColor;
+    cursor: default;
+  }
+  
+  > .disabled {
+    > span,
+    > a,
+    > a:hover,
+    > a:focus {
+      color: @paginationDisabledColor;
+      background-color: @paginationBg;
+      cursor: not-allowed;
+    }
+  }
+}
+
+// Sizing
+// --------------------------------------------------
+
+// Large
+.pagination.lg {
+  > li {
+    > a,
+    > span {
+      padding: @paddingLargeVertical @paddingLargeHorizontal;
+      font-size: @fontSizeLarge;
+    }
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@borderRadiusLarge);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@borderRadiusLarge);
+      }
+    }
+  }
+}
+
+// Small
+.pagination.sm {
+  > li {
+    > a,
+    > span {
+      padding: @paddingSmallVertical @paddingSmallHorizontal;
+      font-size: @fontSizeSmall;
+    }
+    &:first-child {
+      > a,
+      > span {
+        .border-left-radius(@borderRadiusSmall);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(@borderRadiusSmall);
+      }
+    }
+  }
+}
+
+// Unadorned pagination (no borders)
+// --------------------------------------------------
+
+.pagination.plain {
+  > li {
+    > a,
+    > span {
+      border: 0;
+    }
+    &:first-child {
+      > a,
+      > span {
+        border-left-width: 0;
+        .border-left-radius(0);
+      }
+    }
+    &:last-child {
+      > a,
+      > span {
+        .border-right-radius(0);
+      }
+    }
+  }
+}

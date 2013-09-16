@@ -1,0 +1,179 @@
+//
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core styles
+.btn {
+  display: inline-block;
+  color: @btnColor;
+  padding: @paddingVertical @paddingHorizontal;
+  margin-bottom: 0; // For input.btn
+  font-size: @fontSize;
+  font-weight: 500;
+  line-height: @lineHeight;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: @borderRadius;
+  white-space: no-wrap;
+  .user-select(none);
+
+  &:focus {
+    .tab-focus();
+  }
+
+  &:hover,
+  &:focus {
+    color: @btnHoverColor;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: default;
+    pointer-events: none; // Future-proof disabling of clicks
+    .opacity(.65);
+    .box-shadow(none);
+  }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn.default {
+  .btn-pseudo-states(@btnBg, @btnBorder, @btnColor);
+}
+.btn.primary {
+  .btn-pseudo-states(@btnPrimaryBg, @btnPrimaryBorder, @btnPrimaryColor);
+}
+// Warning appears as orange
+.btn.warning {
+  .btn-pseudo-states(@btnWarningBg, @btnWarningBorder, @btnWarningColor);
+}
+// Danger and error appear as red
+.btn.danger {
+  .btn-pseudo-states(@btnDangerBg, @btnDangerBorder, @btnDangerColor);
+}
+// Success appears as green
+.btn.success {
+  .btn-pseudo-states(@btnSuccessBg, @btnSuccessBorder, @btnSuccessColor);
+}
+// Info appears as blue-green
+.btn.info {
+  .btn-pseudo-states(@btnInfoBg, @btnInfoBorder, @btnInfoColor);
+}
+
+
+// Link buttons
+// --------------------------------------------------
+
+// Make a button look and behave like a link
+.btn.link {
+  color: @linkColor;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    background-image: none;
+    .box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: @linkColorHover;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus {
+      color: @grayDark;
+      text-decoration: none;
+    }
+  }
+}
+
+// Button Sizes
+// -------------------------
+
+.btn.large {
+  padding: @paddingLargeVertical @paddingLargeHorizontal;
+  font-size: @fontSizeLarge;
+  border-radius: @borderRadiusLarge;
+}
+
+.btn.small,
+.btn.mini {
+  padding: @paddingSmallVertical @paddingSmallHorizontal;
+  font-size: @fontSizeSmall;
+  line-height: 1.5; // ensure proper height of button next to small input
+  border-radius: @borderRadiusSmall;
+}
+
+.btn.mini {
+  padding: 3px 5px;
+}
+
+
+// Icons in buttons
+// -------------------------
+.btn [class^="glyphicon-"]::before       { vertical-align: -2px; }
+.btn.small [class^="glyphicon-"]::before { vertical-align: -1px; }
+
+
+// Block button
+// -------------------------
+
+.btn.block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Vertically space out multiple block buttons
+.btn.block + .btn.block {
+  margin-top: 5px;
+}
+
+// Shapes!!!
+// -------------------------
+.btn.round {
+  border-radius:500px;
+}
+
+.btn.square {
+  border-radius:0;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn.block {
+    width: 100%;
+  }
+}

@@ -1,0 +1,110 @@
+//
+// Progress bars
+// --------------------------------------------------
+
+
+// Bar animations
+// -------------------------
+
+// Webkit
+@-webkit-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Firefox
+@-moz-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// IE9
+@-ms-keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+// Opera
+@-o-keyframes progress-bar-stripes {
+  from  { background-position: 0 0; }
+  to    { background-position: 40px 0; }
+}
+
+// Spec
+@keyframes progress-bar-stripes {
+  from  { background-position: 40px 0; }
+  to    { background-position: 0 0; }
+}
+
+
+
+// Bar itself
+// -------------------------
+
+// Outer container
+.progress {
+  overflow: hidden;
+  height: @lineHeightPx;
+  margin-bottom: @lineHeightPx;
+  background-color: @progressBg;
+  border-radius: @borderRadius;
+  .box-shadow(inset 0 1px 2px rgba(0,0,0,.1));
+}
+
+// Bar of progress
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: @fontSizeSmall;
+  color: @progressBarColor;
+  text-align: center;
+  background-color: @progressBarBg;
+  .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+  .transition(width .6s ease);
+}
+
+// Rounded bars
+.progress.rounded {
+  border-radius: @borderRadiusLarge * 2;
+}
+
+// Striped bars
+.striped .progress-bar {
+  #gradient > .striped(@progressBarBg);
+  .background-size(40px 40px);
+}
+
+// Call animation for the active one
+.progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+     -moz-animation: progress-bar-stripes 2s linear infinite;
+      -ms-animation: progress-bar-stripes 2s linear infinite;
+       -o-animation: progress-bar-stripes 2s linear infinite;
+          animation: progress-bar-stripes 2s linear infinite;
+}
+
+
+
+// Variations
+// -------------------------
+
+// Danger (red)
+.progress-bar.danger {
+  .progress-bar-variant(@progressBarDangerBg);
+}
+
+// Success (green)
+.progress-bar.success {
+  .progress-bar-variant(@progressBarSuccessBg);
+}
+
+// Warning (orange)
+.progress-bar.warning {
+  .progress-bar-variant(@progressBarWarningBg);
+}
+
+// Info (teal)
+.progress-bar.info {
+  .progress-bar-variant(@progressBarInfoBg);
+}

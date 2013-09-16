@@ -1,0 +1,88 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+
+// Floats
+// -------------------------
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.pull-right {
+  float: right!important;
+}
+.pull-left {
+  float: left!important;
+}
+
+
+// Toggling content
+// -------------------------
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden !important;
+}
+
+// Only display content to screen readers
+// See: http://a11yproject.com/posts/how-to-hide-content/
+// -------------------------
+.sr-only { 
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px; 
+}
+
+// Extends the .sr-only class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p
+.sr-only.focusable:active, 
+.sr-only.focusable:focus { 
+  clip: auto; 
+  height: auto; 
+  margin: 0; 
+  overflow: visible; 
+  position: static; 
+  width: auto;
+}
+
+
+// For image replacement
+.text-hide {
+  .hide-text();
+}
+
+// For Affix plugin
+.affix {
+  position: fixed;
+}
+
+
+// CUSTOM -- REWORK ??
+// For styling custom vertical dividers with text (e.g. <span class="divider">|</span>)
+.divider {
+  padding: 0 5px;
+  color: @borderColor;
+}
+
+.square {
+  border-radius: 0!important;
+  * {
+    border-radius: 0!important;
+  }
+}

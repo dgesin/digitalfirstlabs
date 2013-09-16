@@ -1,0 +1,68 @@
+//
+// Code (inline and blocK)
+// --------------------------------------------------
+
+
+// Inline and block code styles
+code,
+pre {
+  font-family: @monoFontFamily;
+}
+
+// Inline code
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: @codeColor;
+  background-color: @codeBg;
+  white-space: nowrap;
+  border-radius: @borderRadius;
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: (@lineHeightPx - 1) / 2;
+  margin: 0 0 @lineHeightPx / 2;
+  .font-size(@fontSize - 1);
+  line-height: @lineHeight;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: @grayDark;
+  white-space: pre-wrap;  // nm 2.1.1
+  background-color: @preBg;
+  border: 1px solid @preBorderColor;
+  border-radius: @borderRadius;
+
+  // Make prettyprint styles more spaced out for readability
+  &.prettyprint {
+    margin-bottom: @lineHeightPx;
+  }
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: @preScrollableMaxHeight;
+  overflow-y: scroll;
+}
+
+// Keystroke Characters
+.keystroke, kbd {
+  font-family: @monoFontFamily;
+  .font-size(@fontSize - 1);
+  padding: 2px 4px 0;
+  margin: 0;
+  background: #ededed;
+  border: solid 1px #dbdbdb;
+  border-radius: @borderRadiusSmall;
+}
