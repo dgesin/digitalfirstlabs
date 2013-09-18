@@ -916,14 +916,13 @@ add_filter( 'bp_get_group_description_excerpt', 'bp_excerpt_group_description');
 function custom_login_logo() { ?>
 
 <style type="text/css">
-body { background-color:#1c1919!important; }
+
 #loginform, #lostpasswordform, #resetpassform { box-shadow:none!important; border:none!important; background:none; padding-left:0px; padding-right:0px; }
-#login h1 { display:none; }
-#login p#nav, #login p#backtoblog, #login p#nav a, #login p#backtoblog a, label, #login_error, p.message, #login_error a, p.message a, p.description { color:#ffffff!important; text-shadow:none!important; }
+#login p#nav, #login p#backtoblog, #login_error, p.message, #login_error a, p.message a, p.description { color:#ffffff!important; text-shadow:none!important; }
 #login p#nav, #login p#backtoblog { padding-left:0px; padding-right:0px; }
 #login p#nav a, #login p#backtoblog a { font-weight:bold; }
-#loginform p label input.input, #lostpasswordform p label input.input, #resetpassform p label input.input { border-radius:0px; color:#ffffff; padding-top:9px; padding-bottom:9px; background:#212121; border:1px solid #000000; box-shadow: inset 0px 0px 0px 1px #2c2c2c; }
-#loginform p.submit input#wp-submit, #lostpasswordform p.submit input#wp-submit, #resetpassform p.submit input#wp-submit { background: #fdb424; background: linear-gradient(to bottom, #fdb424 0%,#dc9302 100%); font-size:16px; padding:4px 14px 4px 14px; height:auto!important; box-shadow: inset 0px 0px 0px 1px #fed161; border-radius:0px; color:#000000; text-shadow:none; border:1px solid #000000; }
+#loginform p label input.input, #lostpasswordform p label input.input, #resetpassform p label input.input { border-radius:0px; color:#000000; padding-top:9px; padding-bottom:9px; background:#ffffff; border:1px solid #aaaaaa; box-shadow: inset 0px 0px 0px 1px #cccccc; }
+#loginform p.submit input#wp-submit, #lostpasswordform p.submit input#wp-submit, #resetpassform p.submit input#wp-submit { background: #fdb424; background: linear-gradient(to bottom, #F68C1E 0%,#EC8622 100%); font-size:16px; padding:4px 14px 4px 14px; height:auto!important; box-shadow: 0px 1px 1px #cccccc; border-radius:0px; color:#ffffff; text-shadow:none; border:1px solid #777777; }
 #login_error, p.message { border:none!important; box-shadow:none!important; background:#121212!important; padding:20px 12px!important; font-weight:bold; }
 #resetpassform #pass-strength-result { padding-left:0px; padding-right:0px; width:100%; border:none; overflow:hidden; }
 </style> 

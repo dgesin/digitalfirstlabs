@@ -80,7 +80,7 @@ img { width: auto!important; height:auto; }
 
 
 	<div id="top-bar-right">
-	 	<?php get_search_form(); ?> 
+	 	<!--<?php get_search_form(); ?> -->
         	</div><!--top-bar-right ends-->
 
 	</div><!-- #header-very-top -->	

@@ -79,11 +79,11 @@ header, nav, section, article, aside, footer { display:block; }
 /*--------------------------------------------------------------
 2.0 - Structural
 --------------------------------------------------------------*/
-body { background:#ffffff; color:#505050; font-size: 12px; font-family: Open Sans, Tahoma, Verdana, sans-serif; padding:0px; }
+body { background:#ffffff; color:#333333; font-size: 12px; font-family: Open Sans, Tahoma, Verdana, sans-serif; padding:0px; }
 #main { border-top:1px solid #eaeaea; padding:12px 0; overflow:hidden; width:1240px; margin:0 auto; margin-top:10px; }
 #container { overflow:hidden; }
 body.activity-permalink div#container {background: none;border: none;}
-a { text-decoration: none; color:#4b4b4b; }
+a { text-decoration: none; color:#0196ff; }
 a img {border:none;}
 .none { display:none; }
 input { font-family:Open Sans; }
@@ -164,6 +164,7 @@ div#sidebar div.sidebar-box:first-child div.sidebar-title { border-top:none; }
 #sidebar ul { width:340px; margin-top:0px; }
 .sidebar-box li { padding:6px 0px 5px 0px; }
 .sidebar-box a { color:#393939; font-size:13px; }
+.sidebar-box a.selected {color:#ff9801;}
 .sidebar-box ul li ul li { margin-left:10px; border:none; }
 ul#blog-categories-left { float:left; width:160px; }
 ul#blog-categories-right { float:left; width:160px; margin-left:5px; }
@@ -187,7 +188,8 @@ div#sidebar div#sidebar-me h4 {font-size: 16px;margin: 0 0 8px 0;font-weight: no
 .recent-post-bottom .post-title-bottom-category a { font-size:10px; }
 
 /*-------------------------- Sidebar - Members Widget -----------------------------------*/
-#sidebar #members-list-options { font-style:italic; margin-top:10px; }
+#sidebar #members-list-options {margin-top:10px; }
+#sidebar #members-list-options a.selected {color:#ff9801;}
 #sidebar .sidebar-box-child #members-list .vcard { padding:11px 0px 25px 0px; }
 #sidebar .sidebar-box-child .vcard .item-avatar img { display:block; margin: 0px 15px 0 0; padding:3px; border:1px solid #e0e0e0; border-radius:4px; box-shadow: 2px 2px 0px 0px #e0e0e0; }
 #sidebar .sidebar-box-child .vcard .item-title a { font-weight:bold; font-size:16px; }
@@ -924,7 +926,7 @@ div#item-header ul img.avatar, div#item-header ul.avatars img.avatar {height: 30
 div#item-header div.generic-button, div#item-header a.button {float: left;margin: 10px 10px 0 0;}
 div#item-header div#message.info {line-height: 80%;}
 
-#groups-list li { width:380px; float:left; margin:0 90px 50px 0; }
+#groups-list li { width:380px; float:left;}
 #member-list li { padding:20px; min-height:60px; }
 #member-list li img.avatar { margin-right:16px; padding:3px; border:1px solid #e0e0e0; border-radius:4px; box-shadow: 2px 2px 0px 0px #e0e0e0; }
 #member-list li { border-bottom:1px solid #e5e5e5; }

@@ -1,6 +1,6 @@
 .hide-if-no-js{display:none}.description{font-weight:normal;font-style:italic}.description
 code{font-style:normal;background:#eee;padding:2px 4px}#bp-create-doc-button{float:right;margin:5px
-19px;font-weight:bold}body.bp-docs div.page
+19px;font-weight:bold; background:#777; color:#fff; border:none; border-radius:10px; box-shadow:0 1px 1px #777;}body.bp-docs div.page
 ul{list-style-type:none}#bp-docs-all-docs{width:auto}.doc-tabs{overflow:hidden}.doc-tabs li{float:left;margin:0
 5px;list-style-type:none}.doc-tabs li:first-child{margin-left:0}.doc-tabs li
 a{background:#f1f1f1;text-decoration:none;display:block;padding:4px 10px;border-radius:5px 5px 0 0}.doc-tabs li.current
