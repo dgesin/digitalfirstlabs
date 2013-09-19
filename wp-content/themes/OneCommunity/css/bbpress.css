@@ -9,7 +9,7 @@
 #bbpress-forums .status-trash.odd, #bbpress-forums .status-spam.odd {background-color: #fdd;}
 #bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer {background: #f3f3f3;border-top: 1px solid #eee;font-weight: bold; padding:8px; text-align: center;}
 #bbpress-forums .bbp-forums-list {margin: 10px 0 9px 5px;padding-left: 15px;border-left: 3px solid #ddd;}
-#bbpress-forums .bbp-forums-list li {display: inline;font-size: 11px;}
+#bbpress-forums .bbp-forums-list li {display: block;font-size: 11px;}
 #bbpress-forums li.bbp-footer p {margin: 0;line-height: 1em;}
 #bbpress-forums .bbp-topic-content img, #bbpress-forums .bbp-reply-content img {max-width: 90%;}
 #bbpress-forums .bbp-topic-content ul, #bbpress-forums .bbp-reply-content ul {list-style: square;padding-left: 15px;}
@@ -131,9 +131,9 @@ div.bbp-topic-tags { margin:10px 20px 0 0; font-size: 11px;float: right; }
 /* =Admin Links
 -------------------------------------------------------------- */
 span.bbp-admin-links {float: right;color: #ddd;}
-span.bbp-admin-links a {color: #bbb;font-weight: normal;font-size: 10px;text-transform: uppercase;text-decoration: none;}
+span.bbp-admin-links a {color: #5d6da2; font-weight: normal;font-size: 10px;text-transform: uppercase;text-decoration: none;}
 fieldset span.bbp-admin-links {float: left;}
-tr td span.bbp-admin-links a:hover {color: #ff4b33;}
+tr td span.bbp-admin-links a:hover {color: #15CCB6;}
 td.bbp-topic-admin-links, td.bbp-topic-counts {width: 50%;}
 .bbp-topic-header a.bbp-topic-permalink, .bbp-reply-header a.bbp-reply-permalink {float: right;margin-left: 10px;color: #ccc;}
 

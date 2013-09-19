@@ -83,7 +83,7 @@ body { background:#ffffff; color:#333333; font-size: 12px; font-family: Open San
 #main { border-top:1px solid #eaeaea; padding:12px 0; overflow:hidden; width:1240px; margin:0 auto; margin-top:10px; }
 #container { overflow:hidden; }
 body.activity-permalink div#container {background: none;border: none;}
-a { text-decoration: none; color:#0196ff; }
+a { text-decoration: none; color:#0068B2; }
 a img {border:none;}
 .none { display:none; }
 input { font-family:Open Sans; }
@@ -164,7 +164,7 @@ div#sidebar div.sidebar-box:first-child div.sidebar-title { border-top:none; }
 #sidebar ul { width:340px; margin-top:0px; }
 .sidebar-box li { padding:6px 0px 5px 0px; }
 .sidebar-box a { color:#393939; font-size:13px; }
-.sidebar-box a.selected {color:#ff9801;}
+.sidebar-box a.selected {color:#ef8611;}
 .sidebar-box ul li ul li { margin-left:10px; border:none; }
 ul#blog-categories-left { float:left; width:160px; }
 ul#blog-categories-right { float:left; width:160px; margin-left:5px; }
@@ -252,7 +252,7 @@ a.front-member-item img.avatar { width:60px; height:60px; }
 /*--------------------------------------------------------------
 2.6 - Groups
 --------------------------------------------------------------*/
-span.activity { font-size: 11px; padding: 3px 6px; background:#ff9801; color:#ffffff; }
+span.activity { font-size: 11px; padding: 3px 6px; color:#000000; font-style:italic; }
 span.activity:hover { background:#e28600; }
 .group-box { float:left; margin:5px 12px 20px 5px; font-size:12px; line-height:1.6em; }
 .page-template-frontpage1-php .group-box, .page-template-frontpage2-php .group-box, .page-template-frontpage3-php .group-box { margin:5px 18px 20px 5px; }

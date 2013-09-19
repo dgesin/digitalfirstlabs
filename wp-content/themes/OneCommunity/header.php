@@ -4,6 +4,7 @@
 		<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ) ?>; charset=<?php bloginfo( 'charset' ) ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title><?php wp_title( '|', true, 'right' ); bloginfo( 'name' ); ?></title>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oxygen" />
 		<link rel="shortcut icon" href="<?php echo of_get_option('favicon_path', 'http://www.demo1.diaboliquedesign.com/4/favicon.gif' ); ?>" />
 		<?php do_action( 'bp_head' ) ?>
 
