@@ -13,7 +13,11 @@ get_header( 'buddypress' ); ?>
 	
 	<div id="content">
 
-	<div class="page-title"><?php the_title(); ?></div>
+	<div class="page-title">
+	
+	<?php 
+	the_title();
+	?></div>
 		<div class="padder">
 
 		<?php do_action( 'bp_before_directory_members' ); ?>

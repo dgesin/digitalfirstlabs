@@ -291,7 +291,7 @@ page-template-frontpage1-php .group-box-title, page-template-frontpage2-php .gro
 #tabs-container ul, #tabs-container2 ul { list-style: none; }
 #tabs-container ul li a, #tabs-container2 ul li a { display: block; }
 #tabs-container ul li:last-child a, #tabs-container2 ul li:last-child a { border: none; }
-#create-group-button { float:right; }
+#create-group-button { float:right; font-weight:bold; background: #777; color: #fff; border: none; border-radius:10px; box-shadow:0 1px 1px #ccc; padding: 8px 10px;}
 .group-admins { width:200px; float:left; }
 
 #group-create-tabs { padding:2px 3px 3px 3px; border-top:1px solid #ececec; border-bottom:1px solid #ececec; }
